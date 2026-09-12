@@ -1,0 +1,1 @@
+{"name":"Local: thugondayso","url":"d:\\Code\\coptit\\OOP-PTIT\\thugondayso.java","tests":[{"id":1789226545323,"input":"5\n2 3 4 5 6","output":""},{"id":1789226596419,"input":"10\n1 5 5 8 6 4 3 5 9 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\coptit\\OOP-PTIT\\thugondayso.java","group":"local","local":true}
