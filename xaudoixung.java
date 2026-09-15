@@ -22,11 +22,14 @@ public class xaudoixung {
                 l++;
                 r--;
             }
-            if (cnt >= 2) {
-                System.out.println("NO");
+            if (cnt == 1) {
+                System.out.println("YES");
+            }
+            else if (cnt == 0 && a.length() % 2 != 0) {
+                System.out.println("YES");
             }
             else {
-                System.out.println("YES");
+                System.out.println("NO");
             }
         }
     }
