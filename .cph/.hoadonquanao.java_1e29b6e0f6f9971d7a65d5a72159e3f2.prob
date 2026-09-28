@@ -1,0 +1,1 @@
+{"name":"Local: hoadonquanao","url":"d:\\Code\\coptit\\OOP-PTIT\\hoadonquanao.java","tests":[{"id":1790599943414,"input":"2\nAT\nAo thun\n80000\n45000\nQJ\nQuan Jean\n220000\n125000\n2\nAT1 95\nQJ2 105","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\coptit\\OOP-PTIT\\hoadonquanao.java","group":"local","local":true}
