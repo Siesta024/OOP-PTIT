@@ -1,58 +1,49 @@
-import java.util.*;
+import java.util.Scanner;
+
+class GiangVien {
+   private String ma;
+   private String hoTen;
+   private int tongGioDay;
+   private double heSoLuong;
+   private double luongLinh;
+   private static int sMa = 1;
+
+   public GiangVien() {
+       this.ma = String.format("PM%04d", sMa++);
+   }
+
+   public double getLuongLinh() {
+       return tongGioDay * 240 * heSoLuong;
+   }
+
+   public void input(Scanner in) {
+       this.hoTen = in.nextLine().trim();
+       this.tongGioDay = Integer.parseInt(in.nextLine().trim());
+       this.heSoLuong = Double.parseDouble(in.nextLine().trim());
+       this.luongLinh = getLuongLinh();
+   }
+
+   @Override
+   public String toString() {
+       return ma + " " + hoTen + " " + tongGioDay + " " + heSoLuong;
+   }
+}
 
 public class b5 {
-    static class WordSet {
-        TreeSet<String> a;
-
-        public WordSet(String s) {
-            a = new TreeSet<>();
-            String[] r = s.toLowerCase().trim().split("\\s+");
-            for (int i = 0; i < r.length; i++)
-                a.add(r[i]);
-        }
-
-        public WordSet() {
-            a = new TreeSet<>();
-        }
-
-        public WordSet union(WordSet b) {
-            WordSet c = new WordSet();
-            c.a.addAll(this.a);
-            c.a.addAll(b.a);
-            return c;
-        }
-
-        public WordSet intersection(WordSet b) {
-            WordSet c = new WordSet();
-            for (String i : this.a) {
-                for (String j : b.a) {
-                    if (i.compareTo(j) == 0)
-                        c.a.add(i);
-                }
-            }
-            return c;
-        }
-        @Override
-        public String toString() {
-            String r = "";
-            for (String i : a)
-                r += i + ' ';
-            return r;
-        }
-    }
-    
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        WordSet s1 = new WordSet(in.nextLine());
-        WordSet s2 = new WordSet(in.nextLine());
-        System.out.println(s1.union(s2));
-        System.out.println(s1.intersection(s2));
-    }
-    public static void main5905074(String[] args) {
-        Scanner in = new Scanner(System.in);
-        WordSet s1 = new WordSet(in.nextLine());
-        WordSet s2 = new WordSet(in.nextLine());
-        System.out.println(s1.union(s2));
-        System.out.println(s1.intersection(s2));
-    }
+   public static void main(String args[]) { 
+       Scanner sc = new Scanner(System.in);
+       int n = 2;
+       
+       while (n-- > 0) {
+           if (sc.hasNextLine()) {
+               GiangVien gv = new GiangVien();
+               gv.input(sc);
+               System.out.println(gv.toString());
+               
+               double mucLuong = gv.getLuongLinh();
+               System.out.println(mucLuong);
+           }
+       }
+       sc.close();
+   }
 }

@@ -1,54 +1,43 @@
-import java.io.InputStream;
 import java.util.*;
+import java.util.Scanner;
 
-public class b3 {
-    
-    
-    static class Point{
-        double x, y;
-        
-        public Point(double a, double b){
-            x = a;
-            y = b;
-        }
-
-        static Point nextPoint(Scanner sc){
-            Point a = new Point(sc.nextDouble(), sc.nextDouble());
-            return a;
-        }
-    }
-    
-    static double dis(Point a, Point b){
-        return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
-    }
-
-    static class Triangle{
-        double A, B, C;
-        public Triangle(Point a, Point b, Point c){
-            A = dis(a, b);
-            B = dis(b, c);
-            C = dis(c, a);
-        }
-        public boolean valid(){
-            double m = Math.max(A, Math.max(B, C));
-            return 2*m < A + B + C;
-        }
-        public String getPerimeter(){
-            double s = Math.sqrt((A+B+C)*(A+B-C)*(A-B+C)*(-A+B+C))/4;
-            return String.format("%.2f", s);
-        }
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        while(t-- >0){
-            Triangle a = new Triangle(Point.nextPoint(sc), Point.nextPoint(sc), Point.nextPoint(sc));
-            if(!a.valid()){
-                System.out.println("INVALID");
-            } else{
-                System.out.println(a.getPerimeter());
-            }
-        }
-    }
+class TuyenXeBuyt{
+   private String ma, hoten;
+   private int soHieu, soLuot;
+   private static int sMa = 1;
+   
+   public TuyenXeBuyt(String hoten, int soHieu, int soLuot){
+       this.hoten = hoten;
+       this.soHieu = soHieu;
+       this.soLuot = soLuot;
+       
+       this.ma = String.format("HN%d%02d", soHieu, sMa++);
+   }
+   public int getDoanhthu(){
+       return soLuot*300000;
+   }
+   
+   @Override
+   public String toString(){
+           return ma + " " +  hoten + " " +  soHieu + " " + soLuot + " " + getDoanhthu();
+   }
 }
+
+public class b3{
+   public static void main(String args[]) {
+       Scanner sc = new Scanner(System.in);
+       if(sc.hasNextLine()){
+           int n = Integer.parseInt(sc.nextLine().trim());
+           while(n-- > 0){
+               String hoten = sc.nextLine();
+               int soHieu = Integer.parseInt(sc.nextLine());
+               int soLuot = Integer.parseInt(sc.nextLine());
+           
+               TuyenXeBuyt xe = new TuyenXeBuyt(hoten, soHieu, soLuot);
+               System.out.println(xe);
+           }
+       }
+       sc.close();
+   }
+}
+

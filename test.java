@@ -1,47 +1,33 @@
 import java.util.*;
 
-interface Shape {
-    double CalculateArea();
-    default void display() {
-        System.out.printf("Area: %.2f\n", CalculateArea());
-    }
-}
+class Student {
+    int id;
+    String name;
+    double gpa;
 
-class Circle implements Shape{
-    double radius;
-
-    public Circle(double r) {
-        this.radius = r;
+    Student(int i, String name, double gpa) {
+        this.id = i;
+        this.name = name;
+        this.gpa = gpa;
     }
 
-    @Override 
-    public double CalculateArea() {
-        return (Math.PI * radius * radius);
-    }
-}
-
-class Rectangle implements Shape{
-    double width;
-    double height;
-
-    public Rectangle(double w, double h) {
-        this.width = w;
-        this.height = h;
+    public double getGPA() {
+        return gpa;
     }
 
-    @Override 
-    public double CalculateArea() {
-        return (width * height);
+    public String toString() {
+        return "id: " + id + ", name: " + name + ", gpa: " + gpa;
     }
 }
 
 public class test {
-
     public static void main(String[] args) {
-        Circle c = new Circle(20.0);
-        Rectangle r = new Rectangle(4.0, 5.0);
+        LinkedList<Student> arr = new LinkedList<>();
 
-        c.display();
-        r.display();
+        arr.add(new Student(1, "Duy", 4.0));
+        arr.add(new Student(2, "Dung", 3.95));
+        arr.add(new Student(3, "Long", 3.98));
+
+        
     }
 }
