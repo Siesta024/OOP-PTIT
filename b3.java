@@ -12,16 +12,16 @@ class TuyenXeBuyt{
        this.soLuot = soLuot;
        
        this.ma = String.format("HN%d%02d", soHieu, sMa++);
-   }
+   \u007D
    public int getDoanhthu(){
        return soLuot*300000;
-   }
+   \u007D
    
    @Override
    public String toString(){
            return ma + " " +  hoten + " " +  soHieu + " " + soLuot + " " + getDoanhthu();
-   }
-}
+   \u007D
+\u007D
 
 public class b3{
    public static void main(String args[]) {
@@ -35,9 +35,8 @@ public class b3{
            
                TuyenXeBuyt xe = new TuyenXeBuyt(hoten, soHieu, soLuot);
                System.out.println(xe);
-           }
-       }
+           \u007D
+       \u007D
        sc.close();
-   }
-}
-
+   \u007D
+\u007D

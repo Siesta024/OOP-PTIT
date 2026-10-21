@@ -1,33 +1,45 @@
-import java.util.*;
-
-class Student {
-    int id;
-    String name;
-    double gpa;
-
-    Student(int i, String name, double gpa) {
-        this.id = i;
-        this.name = name;
-        this.gpa = gpa;
-    }
-
-    public double getGPA() {
-        return gpa;
-    }
-
-    public String toString() {
-        return "id: " + id + ", name: " + name + ", gpa: " + gpa;
-    }
-}
-
 public class test {
+    static class BankAccount {
+        public int balance;
+
+        public BankAccount(int b) {
+            balance = b;
+        }
+
+        public synchronized void withdraw(int amount) {
+            String name = Thread.currentThread().getName();
+            System.out.println(name + " withdraw: " + amount);
+
+            if (balance >= amount) {
+                System.out.println(name + " waiting...");
+
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                balance -= amount;
+
+                System.out.println(name + " withdraw success: " + amount + ", remain balance: " + balance);
+            } else {
+                System.out.println(name + " withdraw unsuccess, remain: " + balance);
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        LinkedList<Student> arr = new LinkedList<>();
+        BankAccount acc = new BankAccount(1000);
 
-        arr.add(new Student(1, "Duy", 4.0));
-        arr.add(new Student(2, "Dung", 3.95));
-        arr.add(new Student(3, "Long", 3.98));
+        Thread thread1 = new Thread(() -> {
+            acc.withdraw(700);
+        }, "Nguoi A");
 
-        
+        Thread thread2 = new Thread(() -> {
+            acc.withdraw(700);
+        }, "Nguoi B");
+
+        thread1.start();
+        thread2.start();
     }
 }
