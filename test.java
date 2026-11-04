@@ -1,45 +1,44 @@
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 public class test {
-    static class BankAccount {
-        public int balance;
-
-        public BankAccount(int b) {
-            balance = b;
-        }
-
-        public synchronized void withdraw(int amount) {
-            String name = Thread.currentThread().getName();
-            System.out.println(name + " withdraw: " + amount);
-
-            if (balance >= amount) {
-                System.out.println(name + " waiting...");
-
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                balance -= amount;
-
-                System.out.println(name + " withdraw success: " + amount + ", remain balance: " + balance);
-            } else {
-                System.out.println(name + " withdraw unsuccess, remain: " + balance);
-            }
-        }
-    }
-
     public static void main(String[] args) {
-        BankAccount acc = new BankAccount(1000);
+        JFrame frame = new JFrame("Student Management");
+        frame.setSize(680, 520);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(null);
 
-        Thread thread1 = new Thread(() -> {
-            acc.withdraw(700);
-        }, "Nguoi A");
+        JLabel lblId = new JLabel("ID: ");
+        lblId.setBounds(50, 20, 80, 25);
+        frame.add(lblId);
 
-        Thread thread2 = new Thread(() -> {
-            acc.withdraw(700);
-        }, "Nguoi B");
+        JTextField txtId = new JTextField();
+        txtId.setBounds(140, 20, 140, 25);
+        frame.add(txtId);
 
-        thread1.start();
-        thread2.start();
+        JLabel lblName = new JLabel("Name:");
+        lblName.setBounds(50, 55, 80, 25);
+        frame.add(lblName);
+
+        JTextField txtName = new JTextField();
+        txtName.setBounds(140, 55, 140, 25);
+        frame.add(txtName);
+
+        JLabel lblGen = new JLabel("Gender:");
+        lblGen.setBounds(50, 90, 80, 25);
+        frame.add(lblGen);
+
+        JRadioButton rbMale = new JRadioButton("Male", true);
+        rbMale.setBounds(140, 90, 65, 25);
+        JRadioButton rbFemale = new JRadioButton("Female");
+        rbFemale.setBounds(210, 90, 80, 25);
+
+        ButtonGroup bg
+
+        frame.setVisible(true);
     }
 }
