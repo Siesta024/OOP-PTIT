@@ -1,0 +1,4 @@
+10000;Nguyễn Văn A;abc;Mua lẻ
+10001;N V B;xyz;Mua buôn
+10002;G K D;adac;Mua qua mạng
+10003;H X Ds;àcgv;Mua qua mạng
