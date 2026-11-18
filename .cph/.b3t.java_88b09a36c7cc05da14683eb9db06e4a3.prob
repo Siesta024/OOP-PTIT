@@ -1,0 +1,1 @@
+{"name":"Local: b3t","url":"c:\\Feixiao\\Code\\OOP-PTIT\\b3t.java","tests":[{"id":1791367070407,"input":"2\nTo an An\n21\n15\nLai tuan Tu\n2\n20","output":"HN2101 To an An 21 15 4500000\nHN202 Lai tuan Tu 2 20 6000000"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Feixiao\\Code\\OOP-PTIT\\b3t.java","group":"local","local":true}

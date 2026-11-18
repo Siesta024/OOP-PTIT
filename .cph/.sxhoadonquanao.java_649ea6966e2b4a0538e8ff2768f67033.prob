@@ -1,0 +1,1 @@
+{"name":"Local: sxhoadonquanao","url":"c:\\Feixiao\\Code\\OOP-PTIT\\sxhoadonquanao.java","tests":[{"id":1791357556391,"input":"2\nAT\nAo thun\n80000\n45000\nQJ\nQuan Jean\n220000\n125000\n2\nAT1 95\nQJ2 105","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Feixiao\\Code\\OOP-PTIT\\sxhoadonquanao.java","group":"local","local":true}
