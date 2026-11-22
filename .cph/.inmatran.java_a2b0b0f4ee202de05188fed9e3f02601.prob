@@ -1,0 +1,1 @@
+{"name":"Local: inmatran","url":"d:\\Code\\coptit\\OOP-PTIT\\inmatran.java","tests":[{"id":1795255346113,"input":"2\n3\n45 48 54 21 89 87 70 78 15\n2\n25 27 23 21","output":"45 48 54 87 89 21 70 78 15\n25 27 21 23"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\coptit\\OOP-PTIT\\inmatran.java","group":"local","local":true}
