@@ -37,7 +37,6 @@ public class test {
         JRadioButton rbFemale = new JRadioButton("Female");
         rbFemale.setBounds(210, 90, 80, 25);
 
-        ButtonGroup bg
 
         frame.setVisible(true);
     }
